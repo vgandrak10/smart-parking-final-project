@@ -3,6 +3,15 @@
 ![alt text](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/parking-lot-mess.jpg )
 <sup> Image credits: [CALIFORNIA CLEAN ENERGY COMMITTEE](https://www.californiacleanenergy.org/cruising_for_park) </sup>
 
+#### Table of Contents  
+&ensp;[BACKGROUND](#background)  
+&ensp;[SOLUTION](#solution)  
+&ensp;[METHOD](#method)  
+&ensp;[RESULTS](#results)    
+&ensp;[STEPS TO RUN THE CODE](#steps-to-run-the-code)  
+&ensp;[DESIGN GAP](#design-gap)  
+&ensp;[FUTURE RESEARCH](#future-research)
+
 ## BACKGROUND
 Urbanization is leading to more vehicles on the road in several ways. With the increasing number of cars, managing parking lots during peak hours in busy areas is becoming hard and inefficient. On an average, a driver spends close to 10 minutes searching for a free parking space in a mall. According to an IBM study, this is also responsible for up to 30% of traffic congestion in cities. Traffic congestion is a factor in a number of economic and environmental issues, including noise and pollution. Numerous studies have demonstrated that the smart parking system not only reduces traffic issues but also stimulates economic growth and corporate expansion.
 
@@ -99,5 +108,3 @@ Initially I planned to take the ‘On-board processing’ approach as discussed 
 
 ## FUTURE RESEARCH
 Future research in smart parking solutions could focus on improving the accuracy and reliability of existing systems, such as by exploring new technologies or algorithms that could be used to better identify parking availability. Additionally, research could also explore potential applications of artificial intelligence and machine learning to better predict parking availability and optimize parking allocation. Additionally, research could focus on the development of secure payment systems to allow drivers to pay for parking using their mobile device, as well as explore new technologies for implementing enforcement and toll collection. Finally, research could also focus on the development of systems that can better integrate with existing public transit options to enable end-to-end travel experiences and reduce the reliance on personal vehicles.
-
-
