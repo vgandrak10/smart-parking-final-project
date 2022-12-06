@@ -27,14 +27,17 @@ Nowadays, it seems that cameras, driven by recent advancements in computer visio
 I took the first approach as it allows for a more complex AI model to be developed and deployed in the cloud, where powerful computing resources are available. This will result in a more accurate AI model, without the need to worry about the limitations of an edge device. I drew this idea from the classroom lectures where I worked on AWS cloud instances and realized its computational power.
 
 ### Client module
+&ensp;<sup>[Back to Top](t#camera-based-smart-parking-lot)</sup>  
 The code is written in Python and uses the OpenCV library and the Mosquitto MQTT broker.
 The code captures frames from a webcam, processes them using OpenCV, and then publishes them to the MQTT broker on a particular topic. On the receiving end, the MQTT broker streams the frames to the remote server. The remote server receives the frames for further processing. I was inspired by the camera streaming module discussed in the class. The classroom lectures have motivated me to go for a Pub/Sub architecture using websockets for a better FPS rather than a client/server model using HTTP.
 
-### Remote Server
+### Remote Server  
+&ensp;<sup>[Back to Top](t#camera-based-smart-parking-lot)</sup>  
 I developed a remote server using Python that subscribes to a Mosquitto MQTT topic. This server was able to capture frames using OpenCV and then process them to extract relevant information. Afterward, the server streams the results, so the other devices connected to the same network can view the results.  
 These frames are then passed through an Object Detection module. Tensorflow Object Detection can be used to detect free parking spaces in a given area. It can detect the presence of cars in a parking lot, and then classify the ones that are unoccupied as free parking spaces. This can be done by training the model on labeled images of cars in various parking lot scenarios, and then using it to classify the images as free or occupied. 
   
 #### Model Training 
+&ensp;<sup>[Back to Top](t#camera-based-smart-parking-lot)</sup>  
 I downloaded the PKLot dataset that consists of 10000 labeled images. I used the Tensorflow’s [SSD-MobileNet-V2 model](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_320x320_coco17_tpu-8.tar.gz) which was trained on the COCO dataset, and fine-tuned it on the [PKLot dataset](https://public.roboflow.com/object-detection/pklot). The model can be further tuned to recognize patterns in the images, such as the colors of the cars and their size, in order to improve accuracy. This can be used to help drivers identify and locate free parking spaces, reducing the time it takes for them to reach their destination.  
   
 Below are the Tensorboard results of the training process. These images show the training loss, regularization loss and the time taken for each training step.
@@ -56,7 +59,7 @@ I trained the model for **26K steps** on **Ubuntu 20.04** with a **Intel® Core�
 ![Image7](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-47%20TensorBoard.png)  
 
 ## RESULTS
-
+&ensp;<sup>[Back to Top](t#camera-based-smart-parking-lot)</sup>  
 ### Demo Video
 
 [Click Here to Download](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screencast%20from%2012-05-2022%2004_14_00%20PM.webm)
@@ -67,7 +70,7 @@ I trained the model for **26K steps** on **Ubuntu 20.04** with a **Intel® Core�
 
 
 ## STEPS TO RUN THE CODE
-
+&ensp;<sup>[Back to Top](t#camera-based-smart-parking-lot)</sup>  
 Software requirements : 
 - Ubuntu 20.04
 - Python 3.7 or above [Installation Guide](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server)
@@ -104,7 +107,9 @@ first excute `python Obj_Det_Server_Flask.py` in one terminal
 and then `python client.py` in other terminal.
 
 ## DESIGN GAP
+&ensp;<sup>[Back to Top](t#camera-based-smart-parking-lot)</sup>  
 Initially I planned to take the ‘On-board processing’ approach as discussed in the Method section. My plan was to develop a light weight computer Object Detection algorithm that can run on low-power, resource-constrained devices with limited RAM, storage, and processing power. However, the TensorFlow Lite models that are used for this purpose are not accurate. Hence I decided to take the remote server approach and thereby gave myself the scope to create a more robust and accurate Object Detection model. This approach also proved to have better scalability.
 
 ## FUTURE RESEARCH
+&ensp;<sup>[Back to Top](t#camera-based-smart-parking-lot)</sup>  
 Future research in smart parking solutions could focus on improving the accuracy and reliability of existing systems, such as by exploring new technologies or algorithms that could be used to better identify parking availability. Additionally, research could also explore potential applications of artificial intelligence and machine learning to better predict parking availability and optimize parking allocation. Additionally, research could focus on the development of secure payment systems to allow drivers to pay for parking using their mobile device, as well as explore new technologies for implementing enforcement and toll collection. Finally, research could also focus on the development of systems that can better integrate with existing public transit options to enable end-to-end travel experiences and reduce the reliance on personal vehicles.
