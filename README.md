@@ -29,12 +29,58 @@ These frames are then passed through an Object Detection module. Tensorflow Obje
 I downloaded the PKLot dataset that consists of 10000 labeled images. I used the Tensorflow’s [SSD-MobileNet-V2 model](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_320x320_coco17_tpu-8.tar.gz) which was trained on the COCO dataset, and fine-tuned it on the [PKLot dataset](https://public.roboflow.com/object-detection/pklot). The model can be further tuned to recognize patterns in the images, such as the colors of the cars and their size, in order to improve accuracy. This can be used to help drivers identify and locate free parking spaces, reducing the time it takes for them to reach their destination.  
   
 Below are the Tensorboard results of the training process. These images show the training loss, regularization loss and the time taken for each training step.
-I trained the model for **26K steps** on **Ubuntu 20.04** with a **Intel® Core™ i7 Processor** .
+I trained the model for **26K steps** on **Ubuntu 20.04** with a **Intel® Core™ i7 Processor** .    
+
+
 ![Image2](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-36%20TensorBoard.png)
-![Image3](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-36%20TensorBoard.png)
-![Image4](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-36%20TensorBoard.png)
-![Image5](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-36%20TensorBoard.png)
-![Image6](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-36%20TensorBoard.png)
-![Image7](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-36%20TensorBoard.png)
+
+
+![Image3](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-52%20TensorBoard.png)  
+
+
+![Image4](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-06%20TensorBoard.png)  
+
+![Image5](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-19%20TensorBoard.png)  
+
+![Image6](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-31%20TensorBoard.png) 
+
+![Image7](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-47%20TensorBoard.png)  
+
+## RESULTS
+
+### Demo Video
+
+[Click Here to Download](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screencast%20from%2012-05-2022%2004_14_00%20PM.webm)
+
+![Image8](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/result1.png)  
+
+![Image8](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/result2.png)  
+
+
+## STEPS TO RUN THE CODE
+
+Software requirements : 
+- Ubuntu 20.04
+- Python 3.7 or above [Installation Guide](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server)
+- Conda [Installation Guide](https://docs.anaconda.com/anaconda/install/linux/)  
+
+Steps
+
+1. Clone this github repo.
+2. Install all the dependencies using [environment_tf2.yml](https://github.com/vgandrak10/smart-parking-final-project/blob/main/environment_tf2.yml) , and run this command:  
+`conda env create --name <give-a-name> --file=<path-to-environment.yml>`
+3. Activate the python environment using this command  
+`conda activate <your-env-name>`
+4. Open a new terminal and repeat step #3
+5. Type `ifconfig` in the terminal and copy the `IP Address`
+6. In `mqtt` folder, open `client.py` and add paste the IP Address in `line #9`  
+In `line #13`, add you camera index or give the path to input video file. Sample videos are available in this repo. 
+7. In the same folder, open `Obj_Det_Server_Flask.py`, and:
+   - In `line #30`, add path to Saved_model. `<repo-dir>/exported_model/saved_model`
+   - In `line #31`, add path to labels file. `<repo-dir>/`
+   - In `line #142`, add add your IP Address
+   - In `line #209`, add add your IP Address
+8. In both the open terminals , set the `PYTHONPATH` by executing this command  
+`export PYTHONPATH=$PYTHONPATH:<repo-dir>/`
 
 
