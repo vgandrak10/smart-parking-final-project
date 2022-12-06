@@ -71,16 +71,33 @@ Steps
 `conda env create --name <give-a-name> --file=<path-to-environment.yml>`
 3. Activate the python environment using this command  
 `conda activate <your-env-name>`
-4. Open a new terminal and repeat step #3
-5. Type `ifconfig` in the terminal and copy the `IP Address`
-6. In `mqtt` folder, open `client.py` and add paste the IP Address in `line #9`  
+4. Clone the Tensorflow models repository. Please follow instructions given [here](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#tf-install)  
+After the installation, the folder tree should look something like this:  
+```
+ smart-parking-final-project/
+   ├─ exported_model/
+   ├─ models/
+   ├─ mqtt/
+   ├─ Results/
+   └── ...
+```
+5. Open a new terminal and repeat step #3
+6. Type `ifconfig` in the terminal and copy the `IP Address`
+7. In `mqtt` folder, open `client.py` and add paste the IP Address in `line #9`  
 In `line #13`, add you camera index or give the path to input video file. Sample videos are available in this repo. 
-7. In the same folder, open `Obj_Det_Server_Flask.py`, and:
+8. In the same folder, open `Obj_Det_Server_Flask.py`, and:
    - In `line #30`, add path to Saved_model. `<repo-dir>/exported_model/saved_model`
    - In `line #31`, add path to labels file. `<repo-dir>/`
    - In `line #142`, add add your IP Address
    - In `line #209`, add add your IP Address
-8. In both the open terminals , set the `PYTHONPATH` by executing this command  
-`export PYTHONPATH=$PYTHONPATH:<repo-dir>/`
+9. After making sure you have two open terminals with conda environment and `PYTHONPATH` activated in both,   
+first excute `python Obj_Det_Server_Flask.py` in one terminal  
+and then `python client.py` in other terminal.
+
+## DESIGN GAP
+Initially I planned to take the ‘On-board processing’ approach as discussed in the Method section. My plan was to develop a light weight computer Object Detection algorithm that can run on low-power, resource-constrained devices with limited RAM, storage, and processing power. However, the TensorFlow Lite models that are used for this purpose are not accurate. Hence I decided to take the remote server approach and thereby gave myself the scope to create a more robust and accurate Object Detection model. This approach also proved to have better scalability.
+
+## FUTURE RESEARCH
+Future research in smart parking solutions could focus on improving the accuracy and reliability of existing systems, such as by exploring new technologies or algorithms that could be used to better identify parking availability. Additionally, research could also explore potential applications of artificial intelligence and machine learning to better predict parking availability and optimize parking allocation. Additionally, research could focus on the development of secure payment systems to allow drivers to pay for parking using their mobile device, as well as explore new technologies for implementing enforcement and toll collection. Finally, research could also focus on the development of systems that can better integrate with existing public transit options to enable end-to-end travel experiences and reduce the reliance on personal vehicles.
 
 
