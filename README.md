@@ -44,19 +44,19 @@ Below are the Tensorboard results of the training process. These images show the
 I trained the model for **26K steps** on **Ubuntu 20.04** with a **Intel® Core™ i7 Processor** .    
 
 
-![Image2](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-36%20TensorBoard.png)
+![Image2](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/1.jpeg.png)
 
 
-![Image3](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-55-52%20TensorBoard.png)  
+![Image3](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/2.jpeg.png)  
 
 
-![Image4](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-06%20TensorBoard.png)  
+![Image4](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/3.jpeg.png)  
 
-![Image5](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-19%20TensorBoard.png)  
+![Image5](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/4.jpeg.png)  
 
-![Image6](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-31%20TensorBoard.png) 
+![Image6](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/5.jpeg.png) 
 
-![Image7](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/Screenshot%202022-12-05%20at%2015-56-47%20TensorBoard.png)  
+![Image7](https://github.com/vgandrak10/smart-parking-final-project/blob/main/Results/6.jpeg.png)  
 
 ## RESULTS
 &ensp;<sup>[Back to Top](#camera-based-smart-parking-lot)</sup>  
